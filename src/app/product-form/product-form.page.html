@@ -1,0 +1,74 @@
+<ion-content class="ion-padding-top">
+  <form  #form="ngForm" (submit)="addProduct(form)" class="ion-margin-top ion-padding-top">
+    <ion-item class="ion-margin-top">
+      <ion-label position="floating">Titre</ion-label>
+      <ion-input name="title" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Photo</ion-label>
+      <ion-input name="picture" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Liens vidéo</ion-label>
+      <ion-input name="video_url" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea name="description" ngModel></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Temps cuisson</ion-label>
+      <ion-input name="cooktime" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Temps préparation</ion-label>
+      <ion-input name="preparetime" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Coût</ion-label>
+      <ion-select name="cost" ngModel>
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+        <ion-select-option value="3">3</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre de portions</ion-label>
+      <ion-select name="nbportion" ngModel>
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+        <ion-select-option value="3">3</ion-select-option>
+        <ion-select-option value="4">4</ion-select-option>
+        <ion-select-option value="5">5</ion-select-option>
+        <ion-select-option value="6">6</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Ustensiles</ion-label>
+      <ion-textarea name="tools" ngModel></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Difficulté</ion-label>
+      <ion-select name="level" ngModel>
+        <ion-select-option value="1">Débutant</ion-select-option>
+        <ion-select-option value="2">Intermédiaire</ion-select-option>
+        <ion-select-option value="3">Difficile</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ingredients</ion-label>
+      <ion-textarea name="ingredients" ngModel></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Etapes</ion-label>
+      <ion-textarea name="steps" ngModel></ion-textarea>
+    </ion-item>
+
+
+    <ion-button type="submit" >Enregistrer</ion-button>
+
+
+  </form>
+
+</ion-content>
