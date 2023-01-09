@@ -13,6 +13,20 @@ if ($_GET['action'] == 'add') {
 
 }
 
+if ($_GET['action'] == 'edit') {
+  $data = json_decode(file_get_contents('php://input'), true);
+
+
+  $query = $pdo->prepare("REPLACE INTO product (id,title, picture, video_url, description, cooktime, preparetime, cost, nbportion, tools, level, ingredients, steps) VALUES (:id,:title, :picture, :video_url, :description, :cooktime, :preparetime, :cost, :nbportion, :tools, :level, :ingredients, :steps)");
+
+  $query->execute($data);
+
+  echo json_encode($data);
+
+
+}
+
+
 if ($_GET['action'] == 'getall') {
   $query = $pdo->prepare("SELECT * FROM product");
   $query->execute();
@@ -22,8 +36,9 @@ if ($_GET['action'] == 'getall') {
 }
 
 if ($_GET['action'] == 'getone') {
+  $data= json_decode(file_get_contents('php://input'), true);
   $query = $pdo->prepare("SELECT * FROM product WHERE id=:id");
-  $query->execute([':id'=>$_GET['id']]);
+  $query->execute($data);
   $product = $query->fetch(PDO::FETCH_ASSOC);
 
   echo json_encode($product);
