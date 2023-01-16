@@ -10,14 +10,47 @@
 
 
   <ion-card>
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <img alt="Recette image" src="{{ product.picture }}" />
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>{{product.title}}</ion-card-title>
+      <ion-card-subtitle>{{ product.category_id }}</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
+      <ion-text>
+        <h3>Temps cuisson</h3>
+      <p>{{ product.cooktime }}</p>
+      </ion-text>
+      <ion-text>
+        <h3>Temps préparation</h3>
+      <p>{{ product.preparetime }}</p>
+      </ion-text>
+      <ion-text>
+        <h3>Coût</h3>
+      <p>{{ product.cost }}</p>
+      </ion-text>
+      <ion-text>
+        <h3>Nombre de portions</h3>
+      <p>{{ product.nbportion }}</p>
+      </ion-text>
+      
+ 
+      <ion-text>
+        <h3>Ustensiles</h3>
+       <p>{{ product.tools }}</p>
+      </ion-text>
+      <ion-text>
+        <h3>Difficulté</h3>
+       <p>{{ product.level }}</p>
+      </ion-text>
+      <ion-text>
+        <h3>Ingredients</h3>
+        <p>{{ product.ingredients }}</p>
+      </ion-text>
+      <ion-text> 
+        <h3>Etapes</h3>
+        <p>{{ product.steps }}</p>
+      </ion-text>
     </ion-card-content>
   </ion-card>
 

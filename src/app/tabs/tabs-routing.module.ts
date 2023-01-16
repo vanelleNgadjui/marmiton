@@ -28,9 +28,17 @@ const routes: Routes = [
         path: 'product-form',
         loadChildren: () => import('../product-form/product-form.module').then(m => m.ProductFormPageModule)
       },
+       {
+        path: 'category-form',
+        loadChildren: () => import('../category-form/category-form.module').then(m => m.CategoryFormPageModule)
+      },
       {
         path: 'product-list',
         loadChildren: () => import('../product-list/product-list.module').then(m => m.ProductListPageModule)
+      },
+      {
+        path: 'category-list',
+        loadChildren: () => import('../category-list/category-list.module').then(m => m.CategoryListPageModule)
       }
 
     ]

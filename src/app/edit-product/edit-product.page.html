@@ -67,6 +67,14 @@
       <ion-textarea name="steps" [(ngModel)]="product.steps"></ion-textarea>
     </ion-item>
 
+    <ion-item>
+      <ion-label>catégorie</ion-label>
+      <ion-select name="category_id" [(ngModel)]="product.level">        
+      <ion-select-option *ngFor="let category of categories" value="{{ category.id }}">{{ category.title }}</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+
 
     <ion-button type="submit" >Enregistrer</ion-button>
 

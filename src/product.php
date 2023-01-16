@@ -4,7 +4,7 @@ if ($_GET['action'] == 'add') {
   $data = json_decode(file_get_contents('php://input'), true);
 
 
-  $query = $pdo->prepare("INSERT INTO product (title, picture, video_url, description, cooktime, preparetime, cost, nbportion, tools, level, ingredients, steps) VALUES (:title, :picture, :video_url, :description, :cooktime, :preparetime, :cost, :nbportion, :tools, :level, :ingredients, :steps)");
+  $query = $pdo->prepare("INSERT INTO product (title, picture, video_url, description, cooktime, preparetime, cost, nbportion, tools, level, ingredients, steps, category_id) VALUES (:title, :picture, :video_url, :description, :cooktime, :preparetime, :cost, :nbportion, :tools, :level, :ingredients, :steps, :category_id)");
 
   $query->execute($data);
 
@@ -17,7 +17,7 @@ if ($_GET['action'] == 'edit') {
   $data = json_decode(file_get_contents('php://input'), true);
 
 
-  $query = $pdo->prepare("REPLACE INTO product (id,title, picture, video_url, description, cooktime, preparetime, cost, nbportion, tools, level, ingredients, steps) VALUES (:id,:title, :picture, :video_url, :description, :cooktime, :preparetime, :cost, :nbportion, :tools, :level, :ingredients, :steps)");
+  $query = $pdo->prepare("REPLACE INTO product (id,title, picture, video_url, description, cooktime, preparetime, cost, nbportion, tools, level, ingredients, steps, category_id) VALUES (:id,:title, :picture, :video_url, :description, :cooktime, :preparetime, :cost, :nbportion, :tools, :level, :ingredients, :steps, :category_id)");
 
   $query->execute($data);
 

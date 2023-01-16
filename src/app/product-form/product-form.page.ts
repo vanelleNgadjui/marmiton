@@ -8,18 +8,21 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./product-form.page.scss'],
 })
 export class ProductFormPage implements OnInit {
-
+ 
+  categories:any
   constructor(private http: HttpClient) { }
 
   addProduct(form: NgForm){
 
-    this.http.post('http://localhost/marmiton/marmiton/src/product.php?action=add', JSON.stringify(form.value)).toPromise().then((response:any)=>{console.log(response) })
+    this.http.post('http://localhost:8080/marmiton-1/src/product.php?action=add', JSON.stringify(form.value)).toPromise().then((response:any)=>{console.log(response) })
 
 
   }
 
 
   ngOnInit() {
+    this.http.get('http://localhost:8080/marmiton-1/src/category.php?action=getall').toPromise().then((response: any)=>{this.categories=response});
+
   }
 
 }
